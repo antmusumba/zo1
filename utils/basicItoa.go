@@ -1,8 +1,10 @@
 package utils
 
+import "github.com/01-edu/z01"
+
 //import "github.com/01-edu/z01"
 
-func Itoa(num int)string{
+func Itoa(num int){
 	result := ""
 	for num != 0{
 		mod := num % 10
@@ -10,16 +12,13 @@ func Itoa(num int)string{
 		for i := 0; i < mod; i++{
 			startrune++
 		}
-		result = result + string(startrune)
+		result =  string(startrune) + result
 		num = num / 10
 	}
-	result2 :=""
-	for j:= len(result)-1;j >= 0; j-- {
-		result2 += string(result[j])
+	
+	for _, val := range result {
+	z01.PrintRune(val)
 	}
-	// for _, val := range result2 {
-	// 	z01.PrintRune(val)
-	// }
-	// z01.PrintRune('\n')
-	return result2
+	z01.PrintRune('\n')
+	
 }

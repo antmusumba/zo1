@@ -8,18 +8,23 @@ import (
 
 
 func BasicAtoi(s string) int {
-	x := 0
+	// x := 0
 
-	for _, val := range s {
-		y := 0
-		for i := '1' ; i <= val ; i++ {
+	// for _, val := range s {
+	// 	y := 0
+	// 	for i := '1' ; i <= val ; i++ {
 
-			y++
-		}
-		x = x*10 + y
+	// 		y++
+	// 	}
+	// 	x = x*10 + y
 		
-	}
-	return x
+	// }
+	// return x
 
+	y := 0
+	for _,val := range s {
+		y =y*10 + int(val-'0')
+	}
+	return y
 
 }
