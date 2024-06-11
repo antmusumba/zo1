@@ -1,24 +1,26 @@
 package utils
 
-import "github.com/01-edu/z01"
-
-//import "github.com/01-edu/z01"
-
-func Itoa(num int){
+// import "github.com/01-edu/z01"
+func Itoa(num int) string {
 	result := ""
-	for num != 0{
-		mod := num % 10
-		startrune := '0'
-		for i := 0; i < mod; i++{
-			startrune++
-		}
-		result =  string(startrune) + result
+	neg := false
+
+	if num < 0 {
+		neg = true
+		num = -num
+	}
+	if num == 0 {
+		return "0"
+	}
+
+	for num > 0 {
+
+		result = string(rune(num%10+'0')) + result
 		num = num / 10
 	}
-	
-	for _, val := range result {
-	z01.PrintRune(val)
+
+	if neg {
+		result = "-" + result
 	}
-	z01.PrintRune('\n')
-	
+	return result
 }
