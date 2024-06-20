@@ -11,6 +11,7 @@ func ReduceInt(a []int, f func(int, int) int) {
 	for i := 1; i <= len(a)-1; i++ {
 		n = f(n, a[i])
 	}
+	
 	v := utils.Itoa(n)
 	for _, ch := range v {
 		z01.PrintRune(ch)

@@ -1,30 +1,29 @@
 package main
 
 import (
-	"fmt"
+	
 	"os"
 
 	"github.com/01-edu/z01"
 )
 
 func main() {
-	if len(os.Args[1:]) < 1 || len(os.Args[1:]) > 2 {
-		fmt.Println("usage : go run .  string")
-		return
+	if  len(os.Args) != 2 {
+		os.Exit(0)
 	}
 	a := os.Args[1]
 	r := []rune(a)
-	var isBreak bool = false
+	HasItBreak  := false
 	var lastword []rune
 	for i := len(r) - 1; i >= 0; i-- {
-		y := r[i]
-		if y == ' ' && isBreak {
+		v := r[i]
+		if v == ' ' && HasItBreak {
 			break
-		} else if y == ' ' && !isBreak {
+		} else if v == ' ' && !HasItBreak {
 			continue
 		} else {
-			lastword = append(lastword, y)
-			isBreak = true
+			lastword = append(lastword, v)
+			HasItBreak = true
 
 		}
 	}
