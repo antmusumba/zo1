@@ -14,7 +14,7 @@ func Chunk(slice []int, size int) {
 	return
 }
   chunks := [][]int{}
-  for i:= 0; i < len(slice); i=i+size{
+  for i:= 0; i < len(slice); i+=size{
 	end:= i + size
 	if end > len(slice){
 		end = len(slice)

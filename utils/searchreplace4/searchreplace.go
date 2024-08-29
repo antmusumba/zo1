@@ -11,19 +11,19 @@ func main() {
 		return
 	}
 
-	fst := os.Args[1]
-	scd := os.Args[2]
-	trd := os.Args[3]
+	first := os.Args[1]
+	second := os.Args[2]
+	third := os.Args[3]
 
 	// Ensure the second and third arguments are single characters
-	if len(scd) != 1 || len(trd) != 1 {
+	if len(second) != 1 || len(third) != 1 {
 		return
 	}
 
 	// Check if the oldChar is in the inputString
 	found := false
-	for _, v := range fst {
-		if string(v) == scd {
+	for _, v := range first {
+		if string(v) == second {
 			found = true
 			break
 
@@ -31,15 +31,15 @@ func main() {
 	}
 
 	if !found {
-		fmt.Println(fst)
+		fmt.Println(first)
 		return
 	}
 
 	// Replace oldChar with newChar in the inputString
 	outputString := ""
-	for _, v := range fst {
-		if string(v) == scd {
-			outputString += trd
+	for _, v := range first {
+		if string(v) == second {
+			outputString += third
 
 		} else {
 			outputString += string(v)

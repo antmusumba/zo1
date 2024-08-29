@@ -15,6 +15,7 @@ func BasicAtoi(s string) int {
 		return 0
 	}
 	neg := false
+	// -4894
 	if s[0] == '-' {
 		neg = true
 		s = s[1:]
